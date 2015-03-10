@@ -9,7 +9,7 @@ BloomFilter.prototype.insert = function(value){
     hashedValues = [];
 
   this._hashingFunctions.forEach(function(hashFunc) {
-    hashedValues.push(hashFunc(self._length, value));
+    hashedValues.push(hashFunc(10000, value));
   });
 
   hashedValues.forEach(function(hashedValue) {
@@ -22,7 +22,7 @@ BloomFilter.prototype.contains = function(value){
     hashedValues = [];
 
   this._hashingFunctions.forEach(function(hashFunc) {
-    hashedValues.push(hashFunc(self._length, value));
+    hashedValues.push(hashFunc(10000, value));
   });
 
   var doesContain = true;
